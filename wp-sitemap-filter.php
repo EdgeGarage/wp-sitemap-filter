@@ -10,7 +10,7 @@
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: wp-sitemap-filter
- * GitHub Plugin URI: https://github.com/YOURNAME/wp-sitemap-filter
+ * GitHub Plugin URI: https://github.com/EdgeGarage/wp-sitemap-filter
  * Primary Branch: main
  */
 
@@ -383,3 +383,4 @@ add_action('init', function() {
         'wp-sitemap-filter'
     )->setBranch('main');
 });
+
