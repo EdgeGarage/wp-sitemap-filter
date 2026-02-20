@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: WP Sitemap Filter
- * Plugin URI: https://scheibl-partner.com/edgegarage/wp-sitemap-filter/
+ * Plugin URI: https://scheibl-partner.com/edgegarage/xml-sitemap-filter/
  * Description: Control which posts, pages, taxonomies and users appear in the WordPress core XML sitemap. Disable sitemap providers and exclude individual items.
  * Version: 3.5.1
  * Author: Michael Scheibl
@@ -10,7 +10,7 @@
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: wp-sitemap-filter
- * GitHub Plugin URI: https://github.com/EdgeGarage/wp-sitemap-filter
+ * GitHub Plugin URI: https://github.com/EdgeGarage/xml-sitemap-filter
  * Primary Branch: main
  */
 
