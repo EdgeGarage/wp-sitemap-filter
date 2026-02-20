@@ -55,7 +55,6 @@ wp-sitemap-filter/
 ├── vendor/
 └── ...
 
-
 ---
 
 ## 📝 WordPress.org Compatibility
