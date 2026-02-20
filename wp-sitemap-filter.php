@@ -362,3 +362,4 @@ class WP_Sitemap_Filter_Plugin {
 }
 
 new WP_Sitemap_Filter_Plugin();
+
