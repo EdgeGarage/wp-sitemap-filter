@@ -1,16 +1,16 @@
 <?php
 /**
  * Plugin Name: WP Sitemap Filter
- * Plugin URI: https://scheibl-partner.com
+ * Plugin URI: https://scheibl-partner.com/edgegarage/wp-sitemap-filter/
  * Description: Control which posts, pages, taxonomies and users appear in the WordPress core XML sitemap. Disable sitemap providers and exclude individual items.
- * Version: 3.5.0
+ * Version: 3.5.1
  * Author: Michael Scheibl
  * Author URI: https://scheibl-partner.com
  * Donate link: https://ko-fi.com/scheibl
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: wp-sitemap-filter
- * GitHub Plugin URI: https://github.com/YOURNAME/wp-sitemap-filter
+ * GitHub Plugin URI: https://github.com/EdgeGarage/wp-sitemap-filter
  * Primary Branch: main
  */
 
@@ -18,8 +18,8 @@ if (!defined('ABSPATH')) exit;
 
 class WP_Sitemap_Filter_Plugin {
 
-    private $excluded_option   = 'wp_xsf_excluded_items';
-    private $disabled_option   = 'wp_xsf_disabled_providers';
+    private $excluded_option    = 'wp_xsf_excluded_items';
+    private $disabled_option    = 'wp_xsf_disabled_providers';
     private $last_update_option = 'wp_xsf_last_update';
 
     public function __construct() {
@@ -77,9 +77,9 @@ class WP_Sitemap_Filter_Plugin {
     }
 
     public function render_admin_page() {
-        $tab        = isset($_GET['tab']) ? sanitize_text_field($_GET['tab']) : 'pages';
-        $excluded   = get_option($this->excluded_option, array());
-        $disabled   = get_option($this->disabled_option, array());
+        $tab         = isset($_GET['tab']) ? sanitize_text_field($_GET['tab']) : 'pages';
+        $excluded    = get_option($this->excluded_option, array());
+        $disabled    = get_option($this->disabled_option, array());
         $last_update = get_option($this->last_update_option, 'Never');
         $sitemap_url = home_url('/wp-sitemap.xml');
 
@@ -362,24 +362,3 @@ class WP_Sitemap_Filter_Plugin {
 }
 
 new WP_Sitemap_Filter_Plugin();
-
-/**
- * GitHub auto-update integration (using YahnisElsts/plugin-update-checker).
- * Place the library in: wp-sitemap-filter/plugin-update-checker/
- */
-add_action('init', function() {
-    if (!class_exists('Puc_v4_Factory')) {
-        $lib = plugin_dir_path(__FILE__) . 'plugin-update-checker/plugin-update-checker.php';
-        if (file_exists($lib)) {
-            require_once $lib;
-        } else {
-            return;
-        }
-    }
-
-    Puc_v4_Factory::buildUpdateChecker(
-        'https://github.com/EdgeGarage/wp-sitemap-filter/',
-        __FILE__,
-        'wp-sitemap-filter'
-    )->setBranch('main');
-});
